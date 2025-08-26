@@ -10,7 +10,7 @@ abstract class Record
 {
     protected string $id;
 
-    protected DateTimeImmutable $createdOn;
+    protected ?DateTimeImmutable $createdOn = null;
 
     protected Account $account;
 
@@ -33,7 +33,7 @@ abstract class Record
 
     protected ?string $additionalInformation = null;
 
-    public function __construct(string $id, DateTimeImmutable $createdOn, Account $account)
+    public function __construct(string $id, ?DateTimeImmutable $createdOn, Account $account)
     {
         $this->id = $id;
         $this->createdOn = $createdOn;
@@ -45,7 +45,7 @@ abstract class Record
         return $this->id;
     }
 
-    public function getCreatedOn(): DateTimeImmutable
+    public function getCreatedOn(): ?DateTimeImmutable
     {
         return $this->createdOn;
     }

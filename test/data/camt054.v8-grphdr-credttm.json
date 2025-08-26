@@ -44,10 +44,7 @@
                 },
                 "getAdditionalInformation": null,
                 "getCopyDuplicateIndicator": null,
-                "getCreatedOn": {
-                    "__CLASS__": "DateTimeImmutable",
-                    "0": "2025-03-25T20:18:34+00:00"
-                },
+                "getCreatedOn": null,
                 "getElectronicSequenceNumber": null,
                 "getEntries": [
                     "__RECURSIVITY__"
