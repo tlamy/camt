@@ -20,10 +20,10 @@ class Message extends BaseMessageDecoder
 
         $xmlNotifications = $this->getRootElement($document)->Ntfctn;
         foreach ($xmlNotifications as $xmlNotification) {
+            $createdOn = (string) $xmlNotification->CreDtTm;
             $notification = new Camt054DTO\Notification(
                 (string) $xmlNotification->Id,
-                (string) $xmlNotification->CreDtTm !== ''
-                    ? $this->dateDecoder->decode((string) $xmlNotification->CreDtTm) : null,
+                $createdOn ? $this->dateDecoder->decode($createdOn) : null,
                 $this->getAccount($xmlNotification)
             );
 
